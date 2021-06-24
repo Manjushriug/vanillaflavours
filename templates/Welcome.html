@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<title>Vanilla Flavours</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"type="text/javascript" charset="utf-8"></script>
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family:"Poppins", sans-Serif;
+font-size: 14px;}
+
+p {font-size: 14px;}
+
+/* Style the Image Used to Trigger the Modal */
+#cupcakeimg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#cupcakeimg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  
+  display: block;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.mySlides {display:none;}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  
+  padding: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  padding: 10px;
+}
+
+.flip-card-back {
+  background-color: #4c5255;
+  color: whitesmoke;
+  transform: rotateY(180deg);
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding-bottom: 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#contact{
+  padding-top: 10px;
+}
+</style>
+
+
+<body>
+
+
+<!-- Start Content -->
+<div id="home" class="w3-content">
+
+<!-- Navbar (Sits on top) -->
+<div class="w3-bar w3-xlarge w3-black w3-opacity-min">
+    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+</div>
+
+<!-- Header image -->
+<div class="w3-display-container">
+    <img src="static/vanilladreams.jpg"  style="width:100%;height:250px">
+
+</div>
+
+<!-- Automatic slideshow -->
+<div class="w3-content w3-section" >
+  <img class="mySlides" src="static/collage.jpg" style="width:100%;height:350px">
+  <img class="mySlides" src="static/collage2.jpg" style="width:100%;height:350px">
+  <img class="mySlides" src="static/collage10.jpg" style="width:100%;height:350px">
+  <img class="mySlides" src="static/collage11.jpg" style="width:100%;height:350px">
+  <img class="mySlides" src="static/collage13.jpg" style="width:100%;height:350px">
+  
+  <img class="mySlides" src="static/collage4.jpg" style="width:100%;height:350px">
+  <img class="mySlides" src="static/collage7.jpg" style="width:100%;height:350px">
+  
+</div>
+
+
+<!-- Menu -->
+<div id="menu" class="w3-container w3-black w3-xxlarge w3-padding-64">
+    <h1 class="w3-center w3-xxlarge w3-padding-32">THE MENU</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+    <a href="#cakes"><div class="w3-quarter w3-padding-large w3-red">Cakes</div></a>
+    <a href="#breads"><div class="w3-quarter w3-padding-large w3-hover-red">Breads</div></a>
+    <a href="#cookies"><div class="w3-quarter w3-padding-large w3-hover-red">Cookies</div></a>
+    <a href="#cakepop"><div class="w3-quarter w3-padding-large w3-hover-red">CakePops</div></a>
+    </div>
+
+    <div id="cakes" class="w3-container w3-white w3-padding-32">
+        <h1><b>Vanilla</b> <span class="w3-right w3-tag w3-black w3-round"></span></h1>
+        <p class="w3-text-dark-grey">Butter cream</p>
+        <hr>
+
+        <h1><b>Chocolate</b> <span class="w3-right w3-tag w3-black w3-round"></span></h1>
+        <p class="w3-text-dark-grey">Chocolate</p>
+        <hr>
+
+        <h1><b>Customised</b> <span class="w3-right w3-tag w3-black w3-round"></span></h1>
+        <p class="w3-text-dark-grey">Flavours: German chocolate, French Vanilla, Strawberry, Red Velvet</p>
+        <p class="w3-text-dark-grey">Fillings: Apple, Strawberry, Cherry, Raspberry</p>
+        <hr>
+        
+        <h1><b><a href="#cupcakes">Try out famous cup cakes!!</a></b> <span class="w3-right w3-tag w3-black w3-round"></span></h1>
+        <p class="w3-text-dark-grey">Flavours: German chocolate, French Vanilla, Strawberry, Red Velvet</p>
+        <hr>
+
+        <h1><b>Eggless cakes made to order </b> <span class="w3-right w3-tag w3-black w3-round"></span></h1>
+        <hr>
+    </div>
+
+    <h2 id="breads" class="w3-center w3-xxlarge w3-padding-32">Bread</h2>
+    <div class="w3-container w3-white w3-padding-32">
+        <h1><b>Banana Bread</b> <span class="w3-tag w3-grey w3-round">Popular</span>
+            <span class="w3-right w3-tag w3-dark-grey w3-round"></span></h1>
+            <p class="w3-text-grey">Banana, All purpose flour,vanilla</p>
+            <hr>
+            
+            <h1><b>Onion rolls</b> <span class="w3-right w3-tag w3-dark-grey w3-round"></span></h1>
+            <p class="w3-text-grey">Onion</p>
+            <hr>
+            
+            <h1><b>Bread Classic</b> <span class="w3-right w3-tag w3-dark-grey w3-round"></span></h1>
+            <p class="w3-text-grey">All Purpose Flour, yeast</p>
+    </div>
+
+    <h2 id="cakepop" class="w3-center w3-xxlarge w3-padding-32">CakePop</h2>
+    <div class="w3-container w3-white w3-padding-8">
+      <h1><b>Try our popular party picks!!</b>
+        <span class="w3-right w3-tag w3-dark-grey w3-round"></span></h1>
+            <p class="w3-text-black">Popular choice - Chocolate dipped, Coconut dipped</p>
+            <hr>
+       
+  <div class="column">
+  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/static/cakepop1.jpg" alt="CakePop" style="width:250px;height:250px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Cutomised Cake Pop</h1>
+          <p>Made to Order</p>
+          <p>We love this, contact to order some!!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div class = "column">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/static/cakepop.jpg" alt="Cakepop" style="width:250px;height:250px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Customize the Cakepop's</h1>
+          <p>Made to Order</p>
+          <p>Contact to order some!!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class = "column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="/static/cakepop2.jpg" alt="Cakepop" style="width:250px;height:250px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Customize the Cakepop's</h1>
+        <p>Made to Order</p>
+        <p>Contact to order some!!</p>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="w3-container w3-black w3-padding-8">
+    <h2 id="cookies" class="w3-center w3-xxlarge w3-padding-16">Cookies</h2>
+    
+    <div class="w3-container w3-white w3-padding-32">
+    <div class="row">
+
+        <div class="column">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/static/cookie.jpg" alt="Cookie" style="width:250px;height:250px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Spiderman Cookie</h1>
+            <p>Made to Order</p>
+            <p>We love that guy, contact to order some!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div class = "column">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/static/cookie2.jpg" alt="Cookie" style="width:250px;height:250px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Unicorn Cookie</h1>
+            <p>Made to Order</p>
+            <p>Contact to order some!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class = "column">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/static/cookie.jpg" alt="Cookie" style="width:250px;height:250px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Butter Cookies</h1>
+            <p>Made to Order</p>
+            <p>Contact to order some!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>
+</div>
+<div class="w3-container w3-black w3-padding-32">
+<h2 id="cupcakes" class="w3-center w3-xxlarge w3-padding-32">Cupcake</h2>
+<div class="w3-container w3-white w3-padding-32">
+  <h1>Order our cup cakes to add flavours to your parties!!
+  <span class="w3-right w3-tag w3-dark-grey w3-round"></span></h1>
+  <img class = "cupcakes w3-padding-8" id="cupcakeimg" src="/static/cupcake1.jpg" alt="Rose-CupCake" style="width:300px;height:250px;">
+  <img class = "cupcakes w3-padding-8" id="cupcakeimg" src="/static/cupcake7.jpg" alt="Customised-CupCake" style="width:300px;height:250px;" >
+  <img class = "cupcakes w3-padding-8" id="cupcakeimg" src="/static/cupcake5.jpg" alt="Customised-CupCake" style="width:300px;height:250px;" >
+
+  <!-- The Modal -->
+  <div id="cupcakeModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+
+</div>
+</div>
+
+<div class="w3-container w3-black w3-padding-32">
+<!-- Contact -->
+<div id = contact class="w3-container w3-white w3-padding-32">
+   
+<h1 class="w3-center w3-xxlarge">Contact</h1>
+<p>We offer full-service catering for any event, large or small. We understand your needs and we will cater to satisfy the biggest criteria of them all, both look and taste.</p>
+<p class="w3-xlarge">Talk to Us  Or just send us a message:</p>
+<form action="/contact" method="POST">
+<p><input class="w3-input w3-padding-16 w3-border" type="text" name="usrname" placeholder="Name" required name="Name"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="text" name ="Email" placeholder="Contact Number" required name="Number"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" name = "DateTime" placeholder="Date and time needed" required name="date"></p>
+<p><input class="w3-input w3-padding-16 w3-border" type="text" name = "Message" placeholder="Message \ Special requirements" required name="Message"></p>
+<p><button class="w3-button w3-red w3-block" type="submit">SEND MESSAGE</button></p>
+</form>
+
+<!--Fa Fa Icons-->
+<div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
+  <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> <a href="http://maps.google.com/?q=Riverwalk Ct, Farmington hills, Michigan, 48336"> Where We Are?</a></div>
+    <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: +1 2484534274(Text or Whats App only)</div>
+    <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> <a href="http://gmail.com"> vanilladream.vd@gmail.com</a></div>
+</div>
+
+
+<p class="w3-left w3-medium w3-padding-8">*Prices vary by design and size, please contact for further details.</p><br>
+<br><p class = " w3-medium w3-padding-8">We need 5 - 7 days lead time, for cake orders.</p><br>
+</div>
+</div>
+<div id="about" class="w3-container w3-white w3-padding-32">
+  <h4><b>About</b></h4>
+  <h6>Welcome to Vanilla Dream we designed this site to browse through wonderful homemade baked goods. We are specialized in customized cakes to celebrate every event and occasion. We also offer cupcakes, custom decorated cookies, 
+    freshly baked breads.
+    Great care and attention to detail is our priority.
+    Induja owner of Vanilla Dream is a certified pastry chef and holds a serv safe certification. She is a graduate in commerce. She is creative and passionate about baking.</h6>
+    <h4><b>PLEASE NOTE:</h4></b>
+    <h6>This is NOT a nut or dairy free facility.
+    Made in home kitchen that has not been inspected by Michigan Department of Agriculture and Rural Development.</h6>
+    
+<!-- End Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center ">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <a class="fa fa-facebook-official w3-hover-opacity" href="https://www.facebook.com/Vanilla-Dream-100253988599569"></a>
+    <a class="fa fa-instagram w3-hover-opacity" href="https://instagram.com/vanilladream.vd"></a>
+  </div>
+  </footer>
+
+  <!--Iterate through the images to change the image every 2 seconds-->
+  <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+
+    // Get the modal
+    var modal = document.getElementById("cupcakeModal");
+
+   // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var images = document.getElementsByClassName("cupcakes");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    for (var i = 0; i < images.length; i++) {
+       var img = images[i];
+       // and attach our click listener for this image.
+       img.onclick = function(evt) {
+         modal.style.display = "block";
+         modalImg.src = this.src;
+         captionText.innerHTML = this.alt;
+  }
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+    </script>
+
+</body>
+
+</html>
