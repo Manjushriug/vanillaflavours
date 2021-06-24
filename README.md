@@ -1,4 +1,4 @@
-## vanillaflavours
+## VanillaFlavours
 
 ### Simple Web page for a home bakery
 
